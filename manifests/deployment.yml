@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: karrapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: karrapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: karrapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: karrapipelinesjavascriptdocker 
+          image: kube543.azurecr.io/karrapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
